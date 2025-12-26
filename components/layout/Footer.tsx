@@ -63,9 +63,9 @@ export default function Footer() {
               ))}
             </div>
             <div className="text-center md:text-right">
-              <p>대표: 하재준 | 사업자등록번호: 862-88-00653</p>
-              <p>메일: help@dacar.com</p>
-              <p>주소: 서울 강남구 봉은사로322 앨트웰빌딩 6층</p>
+              <p>대표: 지근혁 | 사업자등록번호: xxx-xx-xxxxx</p>
+              <p>메일: xxx@xxx.xxx</p>
+              <p>주소: xxxxxxxxxxxxxxxxxxxxxx</p>
             </div>
           </div>
           <div className="mt-6 text-center text-sm text-gray-500">
