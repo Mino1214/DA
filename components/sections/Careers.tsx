@@ -15,7 +15,7 @@ const jobOpenings = [
 
 export default function Careers() {
   return (
-    <Section className="bg-gradient-to-br from-primary-50 to-white">
+    <Section className="bg-gray-50">
       <SectionTitle 
         title="DA와 함께 하고 싶은"
         subtitle="인재를 모집합니다."
@@ -25,13 +25,13 @@ export default function Careers() {
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 gap-6 mb-8">
           {jobOpenings.map((job, index) => (
-            <Card key={index} delay={index * 0.1} className="p-6">
+            <Card key={index} delay={index * 0.1} className="p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                     {job.title}
                   </h3>
-                  <div className="flex items-center gap-4 text-sm text-gray-600">
+                  <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
                     <span>{job.date}</span>
                     <span className="px-3 py-1 bg-gray-100 rounded-full">
                       {job.type}
@@ -49,7 +49,7 @@ export default function Careers() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="text-center"
         >

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Logo from '@/components/ui/Logo'
@@ -16,12 +16,55 @@ const navItems = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+      // 모바일에서 스크롤 위치 고정
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+    } else {
+      document.body.style.overflow = 'unset'
+      document.body.style.position = 'unset'
+      document.body.style.width = 'auto'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+      document.body.style.position = 'unset'
+      document.body.style.width = 'auto'
+    }
+  }, [isOpen])
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled || isOpen
+          ? 'bg-white/90 backdrop-blur-md shadow-sm' 
+          : 'bg-transparent'
+      }`}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50
+      }}
+    >
+      
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Logo />
+          <Logo scrolled={scrolled || isOpen} />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -29,7 +72,11 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                className={`transition-colors font-medium ${
+                  scrolled || isOpen
+                    ? 'text-gray-700 hover:text-black' 
+                    : 'text-white hover:text-gray-200 drop-shadow-md'
+                }`}
               >
                 {item.label}
               </Link>
@@ -39,7 +86,11 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+            className={`lg:hidden p-2 rounded-md transition-colors ${
+              scrolled || isOpen
+                ? 'text-gray-700 hover:bg-gray-100'
+                : 'text-white hover:bg-white/20 drop-shadow-md'
+            }`}
             aria-label="메뉴"
           >
             <svg
@@ -75,7 +126,7 @@ export default function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                    className="block px-4 py-2 rounded-md transition-colors text-gray-700 hover:bg-gray-100"
                   >
                     {item.label}
                   </Link>

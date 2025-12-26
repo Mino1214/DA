@@ -64,7 +64,7 @@ export default function CareersPage() {
                     <h3 className="text-2xl font-bold text-gray-900">
                       {job.title}
                     </h3>
-                    <span className="px-3 py-1 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full">
+                    <span className="px-3 py-1 bg-gray-100 text-gray-900 text-sm font-semibold rounded-full">
                       {job.type}
                     </span>
                   </div>

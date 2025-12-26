@@ -133,10 +133,10 @@ export default function ContactPage() {
             <div className="space-y-6">
               <Card className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Phone className="w-6 h-6 text-primary-600" />
+                  <Phone className="w-6 h-6 text-black" />
                   <h3 className="text-xl font-bold text-gray-900">전화 상담</h3>
                 </div>
-                <p className="text-lg text-primary-600 font-semibold mb-2">
+                <p className="text-lg text-black font-semibold mb-2">
                   1833-6220
                 </p>
                 <p className="text-sm text-gray-600">
@@ -146,10 +146,10 @@ export default function ContactPage() {
               
               <Card className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Mail className="w-6 h-6 text-primary-600" />
+                  <Mail className="w-6 h-6 text-black" />
                   <h3 className="text-xl font-bold text-gray-900">이메일</h3>
                 </div>
-                <p className="text-lg text-primary-600 font-semibold mb-2">
+                <p className="text-lg text-black font-semibold mb-2">
                   help@dacar.com
                 </p>
                 <p className="text-sm text-gray-600">
@@ -159,7 +159,7 @@ export default function ContactPage() {
               
               <Card className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <MapPin className="w-6 h-6 text-primary-600" />
+                  <MapPin className="w-6 h-6 text-black" />
                   <h3 className="text-xl font-bold text-gray-900">주소</h3>
                 </div>
                 <p className="text-gray-700">

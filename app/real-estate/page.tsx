@@ -56,7 +56,7 @@ export default function RealEstatePage() {
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, i) => (
                   <li key={i} className="flex items-center text-gray-700">
-                    <span className="text-primary-600 mr-2">✓</span>
+                    <span className="text-black mr-2">✓</span>
                     {feature}
                   </li>
                 ))}

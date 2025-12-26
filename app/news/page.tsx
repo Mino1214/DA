@@ -62,9 +62,9 @@ export default function NewsPage() {
       <Section className="bg-white">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allNews.map((news, index) => (
-            <Card key={index} delay={index * 0.05} className="p-6 hover:border-primary-200 border-2 border-transparent transition-colors">
+            <Card key={index} delay={index * 0.05} className="p-6 hover:border-gray-300 border-2 border-transparent transition-colors">
               <div className="mb-3">
-                <span className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-semibold rounded-full">
+                <span className="inline-block px-3 py-1 bg-gray-100 text-gray-900 text-xs font-semibold rounded-full">
                   {news.category}
                 </span>
               </div>

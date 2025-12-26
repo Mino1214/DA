@@ -9,9 +9,10 @@ interface LogoProps {
   className?: string
   width?: number
   height?: number
+  scrolled?: boolean
 }
 
-export default function Logo({ className = '', width = 120, height = 40 }: LogoProps) {
+export default function Logo({ className = '', width = 120, height = 40, scrolled = false }: LogoProps) {
   const [imageError, setImageError] = useState(false)
 
   return (
@@ -33,7 +34,11 @@ export default function Logo({ className = '', width = 120, height = 40 }: LogoP
               onError={() => setImageError(true)}
             />
           ) : (
-            <div className="text-2xl font-bold text-primary-600 flex items-center justify-center h-full">
+            <div className={`text-2xl font-bold flex items-center justify-center h-full transition-colors ${
+              scrolled 
+                ? 'text-black' 
+                : 'text-white drop-shadow-md'
+            }`}>
               DA
             </div>
           )}

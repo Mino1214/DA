@@ -47,7 +47,7 @@ export default function AboutPage() {
             { title: '매출', value: '500억+', description: '원' },
           ].map((stat, index) => (
             <Card key={stat.title} delay={index * 0.1} className="p-6 text-center">
-              <div className="text-4xl font-bold text-primary-600 mb-2">
+              <div className="text-4xl font-bold text-black mb-2">
                 {stat.value}
               </div>
               <div className="text-sm text-gray-500 mb-1">{stat.description}</div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
             return (
               <Card key={value.title} delay={index * 0.1} className="p-8 text-center">
                 <div className="mb-4 flex justify-center">
-                  <IconComponent className="w-12 h-12 text-primary-600" />
+                  <IconComponent className="w-12 h-12 text-black" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {value.title}

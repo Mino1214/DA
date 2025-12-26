@@ -40,18 +40,18 @@ export default function News() {
         </Button>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {newsItems.map((news, index) => (
-          <Card key={index} delay={index * 0.1} className="p-6 hover:border-primary-200 border-2 border-transparent transition-colors">
+          <Card key={index} delay={index * 0.1} className="p-4 sm:p-6 hover:border-gray-300 border-2 border-transparent transition-colors">
             <div className="mb-3">
-              <span className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-semibold rounded-full">
+              <span className="inline-block px-3 py-1 bg-gray-100 text-gray-900 text-xs font-semibold rounded-full">
                 {news.category}
               </span>
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2">
+            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 line-clamp-2">
               {news.title}
             </h3>
-            <p className="text-sm text-gray-500">{news.date}</p>
+            <p className="text-xs sm:text-sm text-gray-500">{news.date}</p>
           </Card>
         ))}
       </div>

@@ -20,9 +20,9 @@ export default function Button({
   const baseStyles = 'inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200'
   
   const variants = {
-    primary: 'bg-primary-600 text-white hover:bg-primary-700 shadow-lg hover:shadow-xl',
+    primary: 'bg-black text-white hover:bg-gray-900 shadow-lg hover:shadow-xl',
     secondary: 'bg-gray-100 text-gray-900 hover:bg-gray-200',
-    outline: 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50'
+    outline: 'border-2 border-white text-white hover:bg-white/10'
   }
 
   const buttonContent = (
