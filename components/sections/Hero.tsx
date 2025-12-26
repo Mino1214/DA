@@ -1,22 +1,23 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[800px] sm:min-h-[700px] lg:min-h-[800px] overflow-hidden pt-0">
-      {/* 배경 이미지 */}
+      {/* 배경 비디오 */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/building.png"
-          alt="DA 건물"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/building.mp4" type="video/mp4" />
+        </video>
         {/* 그라데이션 오버레이 */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/80" />
       </div>
