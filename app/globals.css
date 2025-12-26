@@ -77,6 +77,14 @@ header {
   z-index: 50 !important;
 }
 
+/* Hero 섹션 모바일 화면 높이 맞춤 */
+@media (max-width: 640px) {
+  section:first-of-type {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+  }
+}
+
 /* 모바일에서 헤더가 올라가지 않도록 */
 @media (max-width: 768px) {
   header {
