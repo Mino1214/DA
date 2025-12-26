@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${inter.className} overflow-x-hidden`}>
         <Header />
-        <main className="w-full relative">{children}</main>
+        <main className="w-full relative overflow-x-hidden">{children}</main>
         <Footer />
       </body>
     </html>
