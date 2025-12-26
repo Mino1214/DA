@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button'
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[800px] sm:min-h-[700px] lg:min-h-[800px] overflow-hidden pt-0">
+    <section className="relative w-full min-h-[500px] sm:min-h-[700px] lg:min-h-[800px] overflow-hidden pt-0">
       {/* 배경 비디오 */}
       <div className="absolute inset-0 z-0">
         <video
@@ -23,9 +23,9 @@ export default function Hero() {
       </div>
       
       {/* 콘텐츠 */}
-      <div className="relative z-10 w-full pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
+      <div className="relative z-10 w-full pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-20 lg:pb-24">
         <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[800px] sm:min-h-[700px] lg:min-h-[800px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px] sm:min-h-[700px] lg:min-h-[800px]">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
